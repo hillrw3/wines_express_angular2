@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rob Hill",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1",
+    "knex": "^0.12.6",
+    "pg": "^6.1.2"
+  }
+}

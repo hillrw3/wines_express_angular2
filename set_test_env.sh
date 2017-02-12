@@ -1,0 +1,2 @@
+export API_PORT=3001
+export FRONTEND_PORT=4201
