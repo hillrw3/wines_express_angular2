@@ -8,8 +8,8 @@ class Runner
   FRONTEND_PORT=4201
 
   def self.run_feature
-    @@pid = Process.spawn("cd ../server/ && npm start API_PORT=#{API_PORT}", {pgroup: true})
-    @@frontend_pid = Process.spawn("cd ../client/ && ng serve --port=#{FRONTEND_PORT}", {pgroup: true})
+    @@pid = Process.spawn("cd ../server/ && API_PORT=#{API_PORT} npm start", {pgroup: true})
+    @@frontend_pid = Process.spawn("cd ../client/ && ng serve --env=test --port=#{FRONTEND_PORT}", {pgroup: true})
 
     number_of_attempts = 0
     while number_of_attempts < 10
@@ -28,7 +28,7 @@ class Runner
   end
 
   def self.run_api
-    @@pid = Process.spawn("cd ../server/ && npm start API_PORT=#{API_PORT}", {pgroup: true})
+    @@pid = Process.spawn("cd ../server/ && API_PORT=#{API_PORT} npm start", {pgroup: true})
 
       number_of_attempts = 0
       while number_of_attempts < 10

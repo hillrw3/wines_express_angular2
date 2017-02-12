@@ -13,3 +13,8 @@ RSpec.configure do |config|
 
   Capybara.javascript_driver = :chrome
 end
+
+def visit_route(route = '')
+  base_url = "http://localhost:4201"
+  visit base_url + route
+end

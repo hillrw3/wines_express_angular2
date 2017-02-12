@@ -1,5 +1,15 @@
-# require_relative './models'
-#
+require_relative './models'
+
+def create_wine(options = {})
+  Wines.connection
+
+  parameters = {
+    varietal: 'Pinot Noir'
+  }.merge(options)
+
+  Wines.create(parameters)
+end
+
 # def create_pokemon(options = {})
 #   Pokemons.connection
 #

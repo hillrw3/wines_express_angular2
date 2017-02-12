@@ -1,13 +1,18 @@
 require "feature_helper"
 
-base_url = "http://localhost:4201"
-
 feature "Wines", js: true do
 
-  it "says the app works" do
-    visit "#{base_url}"
+  it "displays a list of wines" do
+    create_wine(varietal: 'Chardonnay')
+    create_wine(varietal: 'Pinot Noir')
+    create_wine(varietal: 'Cabernet Franc')
 
+    visit_route '/wines'
 
-    expect(page).to have_content 'app works!'
+    within('ul.wines') do
+      expect(page).to have_content 'Chardonnay'
+      expect(page).to have_content 'Pinot Noir'
+      expect(page).to have_content 'Cabernet Franc'
+    end
   end
 end

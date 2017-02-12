@@ -5,10 +5,13 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { WineComponent } from './wine/wine.component';
+import {WineService} from "./wine/wine.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WineComponent
   ],
   imports: [
     BrowserModule,
@@ -16,7 +19,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [WineService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
